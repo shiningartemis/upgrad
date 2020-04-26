@@ -1,0 +1,130 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.sora.dao.UpgradeServiceMapper" >
+  <resultMap id="BaseResultMap" type="cn.sora.entity.UpgradeService" >
+    <constructor >
+      <idArg column="id" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="service_number" jdbcType="INTEGER" javaType="java.lang.Integer" />
+      <arg column="service_name" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="published" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="upgrade_sign" jdbcType="CHAR" javaType="java.lang.String" />
+      <arg column="remark" jdbcType="VARCHAR" javaType="java.lang.String" />
+      <arg column="gmt_create" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+      <arg column="gmt_modified" jdbcType="TIMESTAMP" javaType="java.util.Date" />
+    </constructor>
+  </resultMap>
+  <sql id="Base_Column_List" >
+    id, service_number, service_name, published, upgrade_sign, remark, gmt_create, gmt_modified
+  </sql>
+  <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >
+    select 
+    <include refid="Base_Column_List" />
+    from upgrade_service
+    where id = #{id,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
+    delete from upgrade_service
+    where id = #{id,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" parameterType="cn.sora.entity.UpgradeService" >
+    insert into upgrade_service (id, service_number, service_name, 
+      published, upgrade_sign, remark, 
+      gmt_create, gmt_modified)
+    values (#{id,jdbcType=INTEGER}, #{serviceNumber,jdbcType=INTEGER}, #{serviceName,jdbcType=VARCHAR}, 
+      #{published,jdbcType=TIMESTAMP}, #{upgradeSign,jdbcType=CHAR}, #{remark,jdbcType=VARCHAR}, 
+      #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModified,jdbcType=TIMESTAMP})
+  </insert>
+  <insert id="insertSelective" parameterType="cn.sora.entity.UpgradeService" >
+    insert into upgrade_service
+    <trim prefix="(" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        id,
+      </if>
+      <if test="serviceNumber != null" >
+        service_number,
+      </if>
+      <if test="serviceName != null" >
+        service_name,
+      </if>
+      <if test="published != null" >
+        published,
+      </if>
+      <if test="upgradeSign != null" >
+        upgrade_sign,
+      </if>
+      <if test="remark != null" >
+        remark,
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create,
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides="," >
+      <if test="id != null" >
+        #{id,jdbcType=INTEGER},
+      </if>
+      <if test="serviceNumber != null" >
+        #{serviceNumber,jdbcType=INTEGER},
+      </if>
+      <if test="serviceName != null" >
+        #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="published != null" >
+        #{published,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upgradeSign != null" >
+        #{upgradeSign,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="cn.sora.entity.UpgradeService" >
+    update upgrade_service
+    <set >
+      <if test="serviceNumber != null" >
+        service_number = #{serviceNumber,jdbcType=INTEGER},
+      </if>
+      <if test="serviceName != null" >
+        service_name = #{serviceName,jdbcType=VARCHAR},
+      </if>
+      <if test="published != null" >
+        published = #{published,jdbcType=TIMESTAMP},
+      </if>
+      <if test="upgradeSign != null" >
+        upgrade_sign = #{upgradeSign,jdbcType=CHAR},
+      </if>
+      <if test="remark != null" >
+        remark = #{remark,jdbcType=VARCHAR},
+      </if>
+      <if test="gmtCreate != null" >
+        gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      </if>
+      <if test="gmtModified != null" >
+        gmt_modified = #{gmtModified,jdbcType=TIMESTAMP},
+      </if>
+    </set>
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="cn.sora.entity.UpgradeService" >
+    update upgrade_service
+    set service_number = #{serviceNumber,jdbcType=INTEGER},
+      service_name = #{serviceName,jdbcType=VARCHAR},
+      published = #{published,jdbcType=TIMESTAMP},
+      upgrade_sign = #{upgradeSign,jdbcType=CHAR},
+      remark = #{remark,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modified = #{gmtModified,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=INTEGER}
+  </update>
+</mapper>

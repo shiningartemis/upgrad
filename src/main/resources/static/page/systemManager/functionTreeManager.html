@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>功能树管理</title>
+  <link rel="stylesheet" href="../../layui/css/layui.css" media="all" />
+  <link rel="stylesheet" href="../../css/public.css" media="all" />
+</head>
+<body>
+  <div id="tree1"></div>
+  <script src="../../layui/layui.js" charset="utf-8"></script>
+  <!-- <script type="text/javascript" src="../../layui/lay/modules/tree.js"></script> -->
+  <script>
+  layui.use('tree', function(){
+    var tree = layui.tree;
+   
+    //渲染
+    var inst1 = tree.render({
+      elem: '#tree1'  //绑定元素
+      ,data: [{
+        title: 'Root' //一级菜单
+        ,children: [{
+          title: 'test'
+        },
+		{
+		  title: '业务系统版本管理'
+		  ,children: [{
+		    title: '业务系统管理'
+		  },
+		  {
+		    title: '版本信息管理'
+		  },
+		  {
+		    title: '区域升级管理'
+		  }]
+		},
+		{
+		  title: '系统管理'
+		  ,children: [{
+		    title: '用户管理'
+		  },
+		  {
+		    title: '角色管理'
+		  },
+		  {
+		    title: '功能树管理'
+		  }]
+		}]
+      }]
+    });
+  });
+  </script>
+</body>
+</html>

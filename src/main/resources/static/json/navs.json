@@ -1,0 +1,58 @@
+{
+	"versionManager": [
+		{
+			"title": "系统版本管理",
+			"icon": "&#xe7ae;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "业务系统管理",
+					"icon": "&#xe735;",
+					"href": "page/versionManager/serviceSystemManager.html",
+					"spread": false
+				},
+				{
+					"title": "版本信息管理",
+					"icon": "&#xe656;",
+					"href": "page/versionManager/versionManager.html",
+					"spread": false
+				},
+				{
+					"title": "区域升级设置",
+					"icon": "&#xe857;",
+					"href": "../templates/test/user.html",
+					"spread": false
+				}
+			]
+		},
+		{
+			"title": "系统管理",
+			"icon": "&#xe631;",
+			"href": "",
+			"spread": false,
+			"children": [
+				{
+					"title": "用户管理",
+					"icon": "&#xe612;",
+					"href": "test/user.html",
+					"spread": false
+				},
+				{
+					"title": "角色管理",
+					"icon": "&#xe613;",
+					"href": "page/userView.html",
+					"spread": false
+				},
+				{
+					"title": "功能树管理",
+					"icon": "&#xe62e;",
+					"href": "page/systemManager/functionTreeManager.html",
+					"spread": false
+				}
+			]
+		}
+	]
+}
+
+
