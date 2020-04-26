@@ -1,14 +1,14 @@
 # Spring配置
 spring:
   # 模板引擎
-  thymeleaf:
-  # 配置静态资源前后缀
-    prefix: classpath:/templates/
-    suffix: .html
-    #mode: HTML
-    encoding: utf-8
-    # 禁用缓存
-    cache: false
+#  thymeleaf:
+#  # 配置静态资源前后缀
+#    prefix: classpath:/templates/
+#    suffix: .html
+#    mode: HTML
+#    encoding: utf-8
+#    # 禁用缓存
+#    cache: false
   # 加入其他配置文件
   profiles:
     active: druid
