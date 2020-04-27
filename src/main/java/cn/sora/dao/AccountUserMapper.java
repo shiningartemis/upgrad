@@ -16,4 +16,7 @@ public interface AccountUserMapper {
     int updateByPrimaryKeySelective(AccountUser record);
 
     int updateByPrimaryKey(AccountUser record);
+
+    //用账号查询用户
+    AccountUser selectByAccountName(String accountName);
 }

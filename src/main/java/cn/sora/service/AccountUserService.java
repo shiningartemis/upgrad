@@ -12,4 +12,12 @@ public interface AccountUserService {
      * @return 用户对象信息
      */
     public AccountUser selectByPrimaryKey(Integer id);
+
+    /**
+     * 通过用户账号查询用户
+     *
+     * @param accountName 用户账号
+     * @return 用户对象信息
+     */
+    public AccountUser selectByAccountName(String accountName);
 }
