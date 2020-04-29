@@ -15,13 +15,13 @@
 				{
 					"title": "版本信息管理",
 					"icon": "&#xe656;",
-					"href": "page/versionManager/versionManager.html",
+					"href": "page/versionManager/table.html",
 					"spread": false
 				},
 				{
 					"title": "区域升级设置",
 					"icon": "&#xe857;",
-					"href": "../templates/test/user.html",
+					"href": "page/versionManager/test1.html",
 					"spread": false
 				}
 			]
@@ -35,7 +35,7 @@
 				{
 					"title": "用户管理",
 					"icon": "&#xe612;",
-					"href": "test/user.html",
+					"href": "page/versionManager/table.html",
 					"spread": false
 				},
 				{

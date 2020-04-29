@@ -29,6 +29,12 @@
     from account_user
     where account_name = #{accountName,jdbcType=VARCHAR}
   </select>
+  <!--查询所有-->
+  <select id="selectAll" resultMap="BaseResultMap" >
+    select
+    <include refid="Base_Column_List" />
+    from account_user
+  </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from account_user
     where id = #{id,jdbcType=INTEGER}

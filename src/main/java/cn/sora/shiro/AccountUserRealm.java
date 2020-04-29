@@ -37,7 +37,7 @@ public class AccountUserRealm extends AuthorizingRealm {
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
         System.out.println("执行认证逻辑");
-        //编写shiro判断逻辑，判断用户名和密码
+        //编写shiro判断逻辑，判断用户名和密
         UsernamePasswordToken token = (UsernamePasswordToken)authenticationToken;
         String username = token.getUsername();
         String password = "";
