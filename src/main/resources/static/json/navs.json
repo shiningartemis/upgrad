@@ -9,19 +9,19 @@
 				{
 					"title": "业务系统管理",
 					"icon": "&#xe735;",
-					"href": "page/versionManager/serviceSystemManager.html",
+					"href": "page/versionManager/tab1.html",
 					"spread": false
 				},
 				{
 					"title": "版本信息管理",
 					"icon": "&#xe656;",
-					"href": "page/versionManager/table.html",
+					"href": "page/versionManager/tab2.html",
 					"spread": false
 				},
 				{
 					"title": "区域升级设置",
 					"icon": "&#xe857;",
-					"href": "page/versionManager/test1.html",
+					"href": "page/versionManager/tab3.html",
 					"spread": false
 				}
 			]

@@ -28,6 +28,8 @@
         <thymeleaf-layout-dialect.version>2.1.1</thymeleaf-layout-dialect.version>
         <!-- thymel对shiro的扩展坐标 -->
         <thymeleaf.extras.shiro.version>2.0.0</thymeleaf.extras.shiro.version>
+        <!--mybatis分页-->
+<!--        <pagehelper.starter.version>1.2.5</pagehelper.starter.version>-->
     </properties>
 
     <dependencies>
@@ -104,6 +106,30 @@
 <!--            <groupId>org.apache.shiro</groupId>-->
 <!--            <artifactId>shiro-web</artifactId>-->
 <!--            <version>${shiro.version}</version>-->
+<!--        </dependency>-->
+
+        <!--pagehelper-->
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-starter</artifactId>
+            <version>1.2.3</version>
+        </dependency>
+        <dependency>
+            <groupId>com.github.pagehelper</groupId>
+            <artifactId>pagehelper-spring-boot-autoconfigure</artifactId>
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+            <version>1.2.3</version>
+        </dependency>
+<!--        <dependency>-->
+<!--            <groupId>com.github.pagehelper</groupId>-->
+<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
+<!--            <version>${pagehelper.starter.version}</version>-->
+<!--            <exclusions>-->
+<!--                <exclusion>-->
+<!--                    <groupId>org.mybatis.spring.boot</groupId>-->
+<!--                    <artifactId>mybatis-spring-boot-starter</artifactId>-->
+<!--                </exclusion>-->
+<!--            </exclusions>-->
 <!--        </dependency>-->
 
     </dependencies>
