@@ -120,17 +120,14 @@
 <!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
             <version>1.2.3</version>
         </dependency>
-<!--        <dependency>-->
-<!--            <groupId>com.github.pagehelper</groupId>-->
-<!--            <artifactId>pagehelper-spring-boot-starter</artifactId>-->
-<!--            <version>${pagehelper.starter.version}</version>-->
-<!--            <exclusions>-->
-<!--                <exclusion>-->
-<!--                    <groupId>org.mybatis.spring.boot</groupId>-->
-<!--                    <artifactId>mybatis-spring-boot-starter</artifactId>-->
-<!--                </exclusion>-->
-<!--            </exclusions>-->
-<!--        </dependency>-->
+
+        <!-- fastjson  https://mvnrepository.com/artifact/com.alibaba/fastjson -->
+        <dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.62</version>
+        </dependency>
+
 
     </dependencies>
 

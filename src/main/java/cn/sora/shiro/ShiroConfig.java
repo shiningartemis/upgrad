@@ -58,7 +58,8 @@ public class ShiroConfig {
         filterMap.put("/login", "anon");
         filterMap.put("/toLogin", "anon");
         //测试用---------------------------------------------------------------------
-        //filterMap.put("/index", "anon");
+        filterMap.put("/index", "anon");
+        filterMap.put("/userList", "anon");
         //授权过滤器
         //注意：当前授权拦截后，shiro会自动跳转到'登录页面'
         filterMap.put("/*", "authc");

@@ -4,45 +4,123 @@
     <meta charset="UTF-8">
     <title>1</title>
     <link rel="stylesheet" href="../../layui/css/layui.css" media="all">
+    <link rel="stylesheet" href="../../css/public.css" media="all">
 </head>
 <body>
 
-<table class="layui-hide" id="loginfoTable"></table>
+<!--上工具栏开始-->
+<blockquote class="layui-elem-quote layui-text" style="margin-top: 5px">
+    <form action="" method="post" id="searchFrm" lay-filter="searchFrm" class="layui-form layui-form-pane">
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-inline">
+                <input type="text" name="accountName" placeholder="请输入" autocomplete="off" class="layui-input">
+            </div>
+
+            <label class="layui-form-label">角色</label>
+            <div class="layui-input-inline">
+                <select name="quiz">
+                    <option value="">请选择问题</option>
+                    <optgroup label="城市记忆">
+                        <option value="你工作的第一个城市">你工作的第一个城市</option>
+                    </optgroup>
+                    <optgroup label="学生时代">
+                        <option value="你的工号">你的工号</option>
+                        <option value="你最喜欢的老师">你最喜欢的老师</option>
+                    </optgroup>
+                </select>
+            </div>
+        </div>
+
+        <div class="layui-form-item">
+            <button type="button" class="layui-btn" lay-submit="" lay-filter="doSearch">查询</button>
+            <button type="button" class="layui-btn" lay-submit="" lay-filter="doEdit">编辑</button>
+            <button type="button" class="layui-btn layui-btn-" lay-submit="" lay-filter="doAdd">新增</button>
+            <button type="reset" class="layui-btn layui-btn-warm" lay-submit="">重置</button>
+        </div>
+    </form>
+</blockquote>
+<!--上工具栏结束-->
+
+<!--数据表格开始-->
+<div>
+    <table class="layui-hide" id="userTable" lay-filter="userTable"></table>
+
+    <div id="loginfoToolBar" style="display: none;">
+        <button type="button" lay-event="batchDelete" class="layui-btn layui-btn-sm layui-btn-danger"><span
+                class="layui-icon layui-icon-delete"></span>批量删除
+        </button>
+    </div>
+
+    <div id="loginfoRowBar" style="display: none;">
+        <button type="button" lay-event="delete" class="layui-btn layui-btn-sm layui-btn-danger"><span
+                class="layui-icon layui-icon-delete"></span>删除
+        </button>
+    </div>
+
+</div>
+<!--数据表格结束-->
 
 <script src="../../layui/layui.js" charset="utf-8"></script>
 <script>
-    layui.use('table', function(){
+    layui.use(['jquery', 'form', 'table', 'layer', 'laydate', 'laypage'], function(){
+        var $ = layui.jquery;
+        var form = layui.form;
         var table = layui.table;
+        var layer = layui.layer;
+        var laydate = layui.laydate;
+        var laypage = layui.laypage;
 
+        //初始化时间选择器
+        laydate.render({
+            elem: '#startTime',
+            type: 'datetime'
+        });
+        laydate.render({
+            elem: '#endTime',
+            type: 'datetime'
+        });
+        laypage.render({
+            elem: 'loginfoTable' //注意，这里的 test1 是 ID，不用加 # 号
+            , count: 50 //数据总数，从服务端得到
+        });
 
-        table.render({
-            elem: '#loginfoTable'
-            ,url:'/list'
+        //加载 数据
+        var tableIns = table.render({
+            elem: '#userTable'  //注意：这里是通过id拿到的
+            ,url:'/userList'
+            , toolbar: '#loginfoToolBar'
+            ,title:'账号信息表'
             ,cols: [[
-                {field:'id', title: 'ID', width:60}
+                {type: 'checkbox', fixed: 'left'}
+                ,{field:'id', title: 'ID', width:60}
                 ,{field:'accountName', title: '账号', width: 100}
                 ,{field:'userName', title: '用户名', width:100}
                 ,{field:'roleId', title: '角色id', width:80}
                 ,{field:'remark', title: '备注', width: 100}
                 ,{field:'gmtCreate', title: '创建时间', width:100}
                 ,{field:'gmtModified', title: '更新时间', width:100}
+                ,{fixed: 'right', title: '操作', toolbar: '#loginfoRowBar', align: 'center'}
             ]]
             ,page:{
-                layout:['limit', 'count', 'prev', 'page', 'next', 'skip'],
+                layout:['limit','count','prev','page','next','skip'],
                 groups: 3,
                 limit:5,
                 limits:[5,10,15,20]
             }
-            ,parseData:function (res) {
-                console.log(res);
-                return{
-                    "code":0
-                    ,"msg":""
-                    ,"count":100
-                    ,"data":res
-                }
-            }
         });
+
+        //模糊查询
+        form.on("submit(doSearch)", function (data) {
+            tableIns.reload({
+                where: data.field,
+                page: {
+                    curr: 1
+                }
+            });
+            return false;
+        });
+
     });
 </script>
 </body>

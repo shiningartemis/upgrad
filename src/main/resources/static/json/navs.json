@@ -21,7 +21,7 @@
 				{
 					"title": "区域升级设置",
 					"icon": "&#xe857;",
-					"href": "page/versionManager/tab3.html",
+					"href": "page/versionManager/loginfoManager.html",
 					"spread": false
 				}
 			]
