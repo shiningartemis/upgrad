@@ -26,4 +26,9 @@ public interface AccountUserMapper {
 
     //查询所有
     List<AccountUser> selectAll();
+
+    //模糊查询
+    List<AccountUser> selectAllLike(String accountName);
+
+    List<AccountUser> selectSomeLike(Map map);
 }

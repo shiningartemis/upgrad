@@ -34,5 +34,28 @@ public class AccountUserServiceImpl implements AccountUserService {
         return list;
     }
 
+    @Override
+    public List<AccountUser> selectAllLike(String accountName) {
+        List<AccountUser> list = accountUserMapper.selectAllLike(accountName);
+        return list;
+    }
+
+    @Override
+    public List<AccountUser> selectSomeLike(Map map) {
+        List<AccountUser> list = accountUserMapper.selectSomeLike(map);
+        return list;
+    }
+
+    @Override
+    public int deleteByPrimaryKey(Integer id) {
+        return accountUserMapper.deleteByPrimaryKey(id);
+    }
+
+//    @Override
+//    public List<AccountUser> selectAllLike(String accountName) {
+//        List<AccountUser> list = accountUserMapper.selectAllLike();
+//        return list;
+//    }
+
 
 }

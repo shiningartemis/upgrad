@@ -35,13 +35,13 @@
 				{
 					"title": "用户管理",
 					"icon": "&#xe612;",
-					"href": "page/versionManager/table.html",
+					"href": "page/systemManager/userManager.html",
 					"spread": false
 				},
 				{
 					"title": "角色管理",
 					"icon": "&#xe613;",
-					"href": "page/userView.html",
+					"href": "page/systemManager/uh.html",
 					"spread": false
 				},
 				{

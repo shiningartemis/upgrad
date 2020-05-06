@@ -26,4 +26,11 @@ public interface AccountUserService {
     public AccountUser selectByAccountName(String accountName);
 
     public List<AccountUser> selectAll();
+
+//    public List<AccountUser> selectAllLike(String accountName);
+    public List<AccountUser> selectAllLike(String accountName);
+
+    public List<AccountUser> selectSomeLike(Map map);
+
+    public int deleteByPrimaryKey(Integer id);
 }

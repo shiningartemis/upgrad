@@ -35,6 +35,21 @@
     <include refid="Base_Column_List" />
     from account_user
   </select>
+  <!--模糊查询-->
+  <select id="selectAllLike" resultMap="BaseResultMap" parameterType="java.lang.String">
+    select
+    <include refid="Base_Column_List" />
+    from account_user
+    where account_name like "%"#{accountName,jdbcType=VARCHAR}"%"
+  </select>
+  <!--多条件模糊查询-->
+  <select id="selectSomeLike" resultMap="BaseResultMap" parameterType="map">
+    select
+    <include refid="Base_Column_List" />
+    from account_user
+    where  concat(IFNULL(`account_name`, ''),IFNULL(`role_id`, '')) like CONCAT ('%', #{account_name},'%','%', #{role_id},'%')
+  </select>
+  <!--用id删除-->
   <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer" >
     delete from account_user
     where id = #{id,jdbcType=INTEGER}
