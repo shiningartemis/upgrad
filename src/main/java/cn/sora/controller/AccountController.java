@@ -6,6 +6,7 @@ import cn.sora.service.AccountUserService;
 import com.alibaba.fastjson.JSONObject;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
+import org.apache.ibatis.javassist.bytecode.stackmap.BasicBlock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,32 +30,39 @@ public class AccountController {
         PageHelper.startPage(pageNum, pageSize);
         System.out.println(accountUser.getAccountName());
 
-        if(accountUser.getAccountName() != null || accountUser.getRoleId() != null){
-            String a = accountUser.getAccountName();
-            String b = String.valueOf(accountUser.getRoleId());
-            Map map =new HashMap();
-            map.put("account_name",a);
-            map.put("role_id",b);
-            System.out.println("1:"+map);
+        try{
+            if(accountUser.getAccountName() != null || accountUser.getRoleId() != null){
+                String a = "";
+                String b = "";
+                a = accountUser.getAccountName();
+                b = String.valueOf(accountUser.getRoleId());
+                Map map =new HashMap();
+                map.put("account_name",a);
+                map.put("role_id",b);
+                System.out.println("1-3:"+map);
 
-            List<AccountUser> userLikeList = accountUserService.selectSomeLike(map);
-            System.out.println("2:"+userLikeList);
-            PageInfo<AccountUser> bean = new PageInfo<AccountUser>(userLikeList);
-            //获取总数
-            long totalCount = bean.getTotal();
-            //坑2：获取分页相关内容，用分页插件的方法就是了，不要用乱七八糟的
-            //int totalCount  = userList.size();
+                List<AccountUser> userLikeList = accountUserService.selectSomeLike(map);
+                System.out.println("2:"+userLikeList);
+                PageInfo<AccountUser> bean = new PageInfo<AccountUser>(userLikeList);
+                //获取总数
+                long totalCount = bean.getTotal();
+                //坑2：获取分页相关内容，用分页插件的方法就是了，不要用乱七八糟的
+                //int totalCount  = userList.size();
 
-            JSONObject obj = new JSONObject();
-            //前台通过key值获得对应的value值
-            obj.put("code", 0);
-            obj.put("msg", "");
-            obj.put("count", totalCount );
-            obj.put("data", userLikeList);
-            System.out.println("3:"+obj.toJSONString());
-            return obj.toJSONString();
+                JSONObject obj = new JSONObject();
+                //前台通过key值获得对应的value值
+                obj.put("code", 0);
+                obj.put("msg", "");
+                obj.put("count", totalCount );
+                obj.put("data", userLikeList);
+                System.out.println("3:"+obj.toJSONString());
+                return obj.toJSONString();
+
+            }
+        }catch (Exception e){
 
         }
+
         List<AccountUser> userList = accountUserService.selectAll();
         System.out.println("外-2:"+userList);
         PageInfo<AccountUser> bean = new PageInfo<AccountUser>(userList);

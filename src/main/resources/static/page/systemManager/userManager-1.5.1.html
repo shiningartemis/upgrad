@@ -163,36 +163,7 @@
 			return false;
 		});
 
-		form.on("submit(doAdd)", function (data) {
-			layer.open({
-				type: 2 //此处以iframe举例
-				, title: '新建'
-				, area: ['600px', '450px']
-				//最大化
-				, maxmin: true
-				//路径也是相对路径，从本页面所在的地方出发
-				, content: 'add.html'
-
-			});
-		});
-		form.on("submit(doEdit)", function (data) {
-			layer.open({
-				type: 2 //此处以iframe举例
-				, title: '编辑'
-				, area: ['600px', '450px']
-				//最大化
-				, maxmin: true
-				//路径也是相对路径，从本页面所在的地方出发
-				, content: 'edit.html'
-
-			});
-		});
-
 	});
-
-
 </script>
-
-
 </body>
 </html>
