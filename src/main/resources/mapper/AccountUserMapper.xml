@@ -40,7 +40,7 @@
     select
     <include refid="Base_Column_List" />
     from account_user
-    where account_name like "%"#{accountName,jdbcType=VARCHAR}"%"
+    where account_name like '%'#{accountName,jdbcType=VARCHAR}'%'
   </select>
   <!--多条件模糊查询-->
   <select id="selectSomeLike" resultMap="BaseResultMap" parameterType="map">

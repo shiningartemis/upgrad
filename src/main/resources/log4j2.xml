@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration monitorInterval="1" status="ERROR" strict="true" name="LogConfig">
+    <Properties>
+        <Property name="logbasedir">D:/data/log/</Property>
+        <Property name="log.layout"> %5p [%t] %d{yyyy-MM-dd HH:mm:ss} %m%n</Property>
+    </Properties>
+    <Appenders>
+        <Console name="Console" target="SYSTEM_OUT">
+
+            <ThresholdFilter level="info" onMatch="ACCEPT" onMismatch="DENY"/>
+            <!-- 输出日志的格式 -->
+            <PatternLayout pattern="${log.layout}"/>
+
+        </Console>
+        <RollingFile name="sinfo" fileName="${logbasedir}/news.log" Append="true"
+                     filePattern = "${logbasedir}/news-%d{yyyy-MM-dd}.log"  ImmediateFlush="true">
+            <PatternLayout>
+                <pattern>${log.layout}</pattern>
+                <Charset>UTF-8</Charset>
+            </PatternLayout>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="10 MB"/>
+                <DefaultRolloverStrategy max="20"/>
+            </Policies>
+
+        </RollingFile>
+    </Appenders>
+
+    <Loggers>
+
+        <Root level="info">
+            <appender-ref ref="Console"/>
+        </Root>
+        <logger name="com.gc.aop" level="info" includeLocation="true" additivity="true">
+            <appender-ref ref="sinfo"/>
+        </logger>
+
+    </Loggers>
+</Configuration>

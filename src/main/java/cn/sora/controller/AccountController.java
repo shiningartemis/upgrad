@@ -1,6 +1,5 @@
 package cn.sora.controller;
 
-import cn.sora.common.ResultObj;
 import cn.sora.entity.AccountUser;
 import cn.sora.service.AccountUserService;
 import com.alibaba.fastjson.JSONObject;

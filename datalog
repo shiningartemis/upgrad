@@ -1,0 +1,33 @@
+2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求开始####################
+  2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - URL : http://localhost/index
+  2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - HTTP_METHOD : GET
+  2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - IP : 0:0:0:0:0:0:0:1
+  2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - RESPONSE : index
+  2020-05-13-10-28 [http-nio-80-exec-1] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求结束####################
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求开始####################
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - URL : http://localhost/userList
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - HTTP_METHOD : GET
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - IP : 0:0:0:0:0:0:0:1
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - name:{page},value:{1}
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - name:{limit},value:{5}
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - RESPONSE : {"msg":"","code":0,"data":[{"accountName":"3","gmtCreate":1588136710000,"id":3,"remark":"3","roleId":1,"userName":"3","userPwd":"dfb316dc2f81f258d6a848f009ea8dc8"},{"accountName":"admin","gmtCreate":1587967978000,"gmtModified":1587967985000,"id":5,"remark":"最初的管理员","roleId":1,"userName":"管理员","userPwd":"71cbbae1b4b8467017cedd62d3bce320"},{"accountName":"5","gmtCreate":1586844985000,"gmtModified":1588140979000,"id":6,"remark":"5","roleId":5,"userName":"5","userPwd":"5"},{"accountName":"6","id":23,"remark":"6","roleId":6,"userName":"6","userPwd":"6"},{"accountName":"7","id":24,"remark":"7","roleId":7,"userName":"7","userPwd":"7"}],"count":8}
+  2020-05-13-10-28 [http-nio-80-exec-15] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求结束####################
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求开始####################
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - URL : http://localhost/userList
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - HTTP_METHOD : GET
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - IP : 0:0:0:0:0:0:0:1
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - name:{page},value:{1}
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - name:{limit},value:{5}
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - RESPONSE : {"msg":"","code":0,"data":[{"accountName":"3","gmtCreate":1588136710000,"id":3,"remark":"3","roleId":1,"userName":"3","userPwd":"dfb316dc2f81f258d6a848f009ea8dc8"},{"accountName":"admin","gmtCreate":1587967978000,"gmtModified":1587967985000,"id":5,"remark":"最初的管理员","roleId":1,"userName":"管理员","userPwd":"71cbbae1b4b8467017cedd62d3bce320"},{"accountName":"5","gmtCreate":1586844985000,"gmtModified":1588140979000,"id":6,"remark":"5","roleId":5,"userName":"5","userPwd":"5"},{"accountName":"6","id":23,"remark":"6","roleId":6,"userName":"6","userPwd":"6"},{"accountName":"7","id":24,"remark":"7","roleId":7,"userName":"7","userPwd":"7"}],"count":8}
+  2020-05-13-10-28 [http-nio-80-exec-18] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求结束####################
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求开始####################
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - URL : http://localhost/userList
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - HTTP_METHOD : GET
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - IP : 0:0:0:0:0:0:0:1
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - name:{page},value:{1}
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - name:{limit},value:{5}
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - name:{accountName},value:{2}
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - name:{roleId},value:{0}
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - RESPONSE : {"msg":"","code":0,"data":[],"count":0}
+  2020-05-13-10-29 [http-nio-80-exec-12] [cn.sora.aop.WebLogAspect] [INFO] - #####################请求结束####################
+  
